@@ -1,4 +1,3 @@
-#include <string.h>
 #include <unistd.h>
 /**
  * main - Entry point, prints "and that piece of art is useful"
@@ -7,8 +6,6 @@
  */
 int main(void)
 {
-	char *mErr = "and that piece of art is useful\" - Dora Korpar, 2015-10-19\n";
-
-	write(2, mErr, strlen(mErr));
+	write(2, "and that piece of art is useful\" - Dora Korpar, 2015-10-19\n", 59);
 	return (1);
 }
