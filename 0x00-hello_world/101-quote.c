@@ -1,4 +1,4 @@
-B#include <string.h>
+#include <string.h>
 #include <unistd.h>
 /**
  * main - Entry point, prints "and that piece of art is useful"
