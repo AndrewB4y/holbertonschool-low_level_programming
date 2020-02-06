@@ -15,7 +15,9 @@ int main(void)
 	{
 		first = num;
 		while (first >= 10)
-			first /= 10;
+			first = first / 10;
+		if (num < 10)
+			first = 0;
 
 		putchar(first + 48);
 		putchar((num % 10) + 48);
