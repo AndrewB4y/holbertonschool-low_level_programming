@@ -11,3 +11,5 @@ int get_first(int);
 int get_last(int);
 void times_table(void);
 int add(int, int);
+void print_any_int(int);
+void print_to_98(int);
