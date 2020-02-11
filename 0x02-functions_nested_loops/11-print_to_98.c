@@ -10,13 +10,14 @@
 void print_to_98(int n)
 {
 	int delta = 1;
-	int diff = n - 98;
 	int current = n;
 
-	if (diff > 0)
+	if (n > 98)
 		delta = -1;
 
 	/*print current n*/
+	if (current < 0)
+		_putchar('-');
 	print_any_int(n);
 
 	while (current != 98)
@@ -24,6 +25,8 @@ void print_to_98(int n)
 		_putchar(',');
 		_putchar(' ');
 		current = current + delta;
+		if (current < 0)
+			_putchar('-');
 		print_any_int(current);
 	}
 	_putchar('\n');
@@ -37,53 +40,13 @@ void print_to_98(int n)
  */
 void print_any_int(int m)
 {
-	int count = 0;
-	int eval = m;
-	int bigTen = 1;
-	int digit;
-	int sign = 1;
+	int last;
 
-	if (m < 0)
-	{
-		sign = -1;
-		_putchar('-');
-	}
-
-	while (eval != 0)
-	{
-		eval /= 10;
-		++count;  /*in the end will store the # of digits of m*/
-		bigTen = bigTen * 10;
-	}
-
-	eval = m;
-	while (eval >= 10 || eval <= -10)
-	{
-		bigTen = bigTen / 10;
-		digit = get_first(eval);
-		if (digit < 0)
-			digit = digit * sign;
-		_putchar(digit + '0');
-		eval = eval - (digit * sign * bigTen);
-	}
-	if (eval < 0)
-		eval = eval * sign;
-	_putchar(eval + '0');
-
-}
-/**
- * get_first - obtains the first digit of the input number
- * @n: input number from which the first digit is obtained
- *
- * Return: the first digit
- */
-
-int get_first(int n)
-{
-	while (n >= 10 || n <= -10)
-	{
-		n = n / 10;
-	}
-
-	return (n);
+	if(m / 10)
+		print_any_int(m / 10);
+	
+	last = m % 10;
+	if(last < 0)
+		last = last * -1;
+	_putchar(last + '0');
 }
