@@ -1,5 +1,4 @@
 #include "holberton.h"
-#include <string.h>
 
 /**
  * main - prints "Holberton"
@@ -12,10 +11,9 @@ int main(void)
 	char *message = "Holberton";
 	int i = 0;
 
-	for (i = 0; i <= (int)strlen(message); i++)
-	{
-		_putchar(message[i]);
-	}
+	do {
+		_putchar(message[i++]);
+	} while (message[i] != '\0');
 	_putchar('\n');
 
 	return (0);
