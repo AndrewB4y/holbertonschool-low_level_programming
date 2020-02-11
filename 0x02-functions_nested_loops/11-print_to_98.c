@@ -61,7 +61,7 @@ void print_any_int(int m)
 	{
 		bigTen = bigTen / 10;
 		digit = get_first(eval);
-		if(digit < 0)
+		if (digit < 0)
 			digit = digit * sign;
 		_putchar(digit + '0');
 		eval = eval - (digit * sign * bigTen);
