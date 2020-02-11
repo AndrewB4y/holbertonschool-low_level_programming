@@ -42,11 +42,11 @@ void print_any_int(int m)
 {
 	int last;
 
-	if(m / 10)
+	if (m / 10)
 		print_any_int(m / 10);
-	
+
 	last = m % 10;
-	if(last < 0)
+	if (last < 0)
 		last = last * -1;
 	_putchar(last + '0');
 }
