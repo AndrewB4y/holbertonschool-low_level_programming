@@ -9,12 +9,9 @@
 
 int _atoi(char *s)
 {
-	int sign = 1;
-	int count = 0;
-	int i;
+	int sign = 1, count = 0, i;
 	char *init;
-	int num = 0;
-	int multip;
+	int num = 0, multip;
 
 	while ((*s < '0' || *s > '9') && (*s != '\0'))
 	{
@@ -43,10 +40,8 @@ int _atoi(char *s)
 	{
 		num += (*init++ - '0') * multip;
 		multip /= 10;
-		if (multip == 0)
-			multip = 1;
 	}
-	num += (*init - '0') * multip;
+	num += (*init - '0');
 
 	return (sign * num);
 }
