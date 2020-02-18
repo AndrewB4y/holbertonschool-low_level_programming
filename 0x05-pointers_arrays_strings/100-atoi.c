@@ -41,7 +41,8 @@ int _atoi(char *s)
 		num += (*init++ - '0') * multip;
 		multip /= 10;
 	}
-	num += (*init - '0');
+	num *= sign;
+	num += (*init - '0') * sign;
 
-	return (sign * num);
+	return (num);
 }
