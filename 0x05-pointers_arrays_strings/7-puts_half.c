@@ -11,8 +11,8 @@
 void puts_half(char *str)
 {
 	int half;
-	int count;
-	char i;
+	long count;
+	int i;
 
 	while (*(str + count) != '\0')
 	{
