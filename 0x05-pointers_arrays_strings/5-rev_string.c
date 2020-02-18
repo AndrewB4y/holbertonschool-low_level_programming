@@ -15,20 +15,23 @@ void rev_string(char *s)
 	char count = 0;
 	int i;
 
-	while (*(s + count) != '\0')
+	if (*s != '\0')
 	{
-		last++;
-		count++;
-	}
-	--last;            /* back previous \0*/
+		while (*(s + count) != '\0')
+		{
+			last++;
+			count++;
+		}
+		--last;            /* back previous \0*/
 
-	for (i = 0; i < (count / 2); i++)
-	{
-		tmp = *last;
-		*last = *init;
-		*init = tmp;
+		for (i = 0; i < (count / 2); i++)
+		{
+			tmp = *last;
+			*last = *init;
+			*init = tmp;
 
-		++init;
-		--last;
+			++init;
+			--last;
+		}
 	}
 }
