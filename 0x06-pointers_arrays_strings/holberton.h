@@ -12,5 +12,6 @@ void look_sep(char*, int*);
 int look_no_sep(char*, int*);
 char *cap_string(char*);
 int is_letter(char);
+char *leet(char*);
 
 #endif
