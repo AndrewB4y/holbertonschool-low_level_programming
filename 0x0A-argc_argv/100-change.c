@@ -39,7 +39,7 @@ int main(int argc, char *argv[])
 			res = res % change[i];
 		}
 	}
-	printf("%d\n", count);	
+	printf("%d\n", count);
 
 	return (0);
 }
