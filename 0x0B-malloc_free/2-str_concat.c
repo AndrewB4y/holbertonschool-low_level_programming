@@ -23,12 +23,13 @@ char *str_concat(char *s1, char *s2)
 		as2 = "";
 
 	ptr = as1;
-	while (*ptr--)
+	while (*ptr++)
 		i++;
 
 	ptr = as2;
-	while (*ptr--)
+	while (*ptr++)
 		i++;
+
 	i++;
 	ptr = malloc(i * sizeof(char));
 
