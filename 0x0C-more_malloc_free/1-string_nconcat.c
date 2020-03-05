@@ -1,6 +1,6 @@
 #include "holberton.h"
 #include <stdlib.h>
-#include <stdio.h>
+
 /**
  * string_nconcat - concatenates two strings
  * @s1: first string to be concatenated
@@ -33,7 +33,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		count = count + 1;
 		i++;
 	}
-	printf("count: %ud\n", count);
+
 	ptr = malloc(sizeof(char) * (count + 1));
 
 	if (ptr == NULL)
