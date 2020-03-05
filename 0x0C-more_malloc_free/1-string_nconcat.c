@@ -28,7 +28,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		count = count + 1;
 
 	i = 0;
-	while (as2[i] != '\0' && ((i + 1) < n))
+	while (as2[i] != '\0' && i < n)
 	{
 		count = count + 1;
 		i++;
@@ -44,7 +44,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		ptr[j++] = as1[i++];
 
 	i = 0;
-	while (as2[i] != '\0' && (j <= count))
+	while (as2[i] != '\0' && j < count)
 		ptr[j++] = as2[i++];
 	ptr[j] = '\0';
 	return (ptr);
