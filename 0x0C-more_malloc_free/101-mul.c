@@ -126,15 +126,18 @@ void _puts(char *str)
 
 void _putNum(char *n, int len)
 {
-	int i = 1;
+	int i = 0;
+	int first = 0;
 
-	if (n[0] != '0')
-		_putchar(n[0]);
-
-	while (len - 1 > 0)
+	while (len > 0)
 	{
-		_putchar(n[i++]);
-		--len;
+		if (n[i] >= '1' && n[i] <= '9' && first == 0)
+			first = 1;
+
+		if (first != 0)
+			_putchar(n[i]);
+		i++;
+		len--;
 	}
 	_putchar('\n');
 }
@@ -153,8 +156,8 @@ int _strlen(char *s)
 
 	while (*s != '\0')
 	{
-		s++;
 		++count;
+		s++;
 	}
 	return (count);
 }
