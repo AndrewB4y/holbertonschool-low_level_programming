@@ -16,7 +16,7 @@ int main(int argc, char *argv[])
 
 	if (argc != 3)
 	{
-		_puts("Error\n");
+		_puts("Error");
 		exit(98);
 	}
 
@@ -26,7 +26,7 @@ int main(int argc, char *argv[])
 	ptr = malloc(size);
 	if (ptr == NULL)
 	{
-		_puts("Error\n");
+		_puts("Error");
 		exit(98);
 	}
 
@@ -36,7 +36,7 @@ int main(int argc, char *argv[])
 	if (multip(argv[1], argv[2], ln1, ln2, ptr))
 	{
 		free(ptr);
-		_puts("Error\n");
+		_puts("Error");
 		exit(98);
 	}
 
