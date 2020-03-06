@@ -13,6 +13,7 @@ int main(int argc, char *argv[])
 {
 	int ln1 = 0, ln2 = 0, i = 0, size = 0;
 	char *ptr = NULL;
+	int offn1 = 0, offn2 = 0;
 
 	if (argc != 3)
 	{
@@ -20,8 +21,8 @@ int main(int argc, char *argv[])
 		exit(98);
 	}
 
-	ln1 = _strlen(argv[1]);
-	ln2 = _strlen(argv[2]);
+	ln1 = _strlen(argv[1], &offn1);
+	ln2 = _strlen(argv[2], &offn2);
 	size = ln1 + ln2;
 	ptr = malloc(size);
 	if (ptr == NULL)
@@ -33,7 +34,7 @@ int main(int argc, char *argv[])
 	for (i = 0; i < size; i++)
 		ptr[i] = '\0';
 
-	if (multip(argv[1], argv[2], ln1, ln2, ptr))
+	if (multip(&argv[1][offn1], &argv[2][offn2], ln1, ln2, ptr))
 	{
 		free(ptr);
 		_puts("Error");
@@ -127,15 +128,10 @@ void _puts(char *str)
 void _putNum(char *n, int len)
 {
 	int i = 0;
-	int first = 0;
 
 	while (len > 0)
 	{
-		if (n[i] >= '1' && n[i] <= '9' && first == 0)
-			first = 1;
-
-		if (first != 0)
-			_putchar(n[i]);
+		_putchar(n[i]);
 		i++;
 		len--;
 	}
@@ -146,17 +142,31 @@ void _putNum(char *n, int len)
 /**
  * _strlen - obtains the length of a string
  * @s: char pointer to the first position in string
+ * @offs: offset to first character != 0
  *
  * Return: the length of the string as an int
  */
 
-int _strlen(char *s)
+int _strlen(char *s, int *offs)
 {
 	int count = 0;
+	int first = 0;
 
 	while (*s != '\0')
 	{
-		++count;
+		if (*s != '0' && first == 0)
+		{
+			first = 1;
+		}
+		else if (first == 0)
+		{
+			*offs = *offs + 1;
+			s++;
+			continue;
+		}
+
+		if (first != 0)
+			++count;
 		s++;
 	}
 	return (count);
