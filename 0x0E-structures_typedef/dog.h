@@ -20,5 +20,6 @@ void print_dog(struct dog *);
 dog_t *new_dog(char *, float, char *);
 int _strlen(char *);
 char *_memcpy(char *, char *, unsigned int);
+void free_dog(dog_t *);
 
 #endif
