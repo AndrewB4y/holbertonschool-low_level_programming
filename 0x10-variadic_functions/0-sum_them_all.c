@@ -3,7 +3,7 @@
 
 /**
  * sum_them_all - returns the integer sum of all its parameters after n.
- * @n: number of parameters received in ...
+ * @n: number of parameters received after n.
  *
  * Return: interger value of the sum
  */
