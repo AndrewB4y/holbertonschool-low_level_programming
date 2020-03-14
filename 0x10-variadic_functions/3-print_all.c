@@ -23,14 +23,14 @@ void print_all(const char * const format, ...)
 
 	va_start(valist, format);
 
-	while (format[i] != '\0')
+	while (format != NULL && format[i] != '\0')
 	{
 		j = 0;
 		while (j < 4)
 		{
 			if (format[i] == *forms[j].c)
 			{
-				printf("%s",sep);
+				printf("%s", sep);
 				forms[j].f(&valist);
 				sep = ", ";
 				break;
