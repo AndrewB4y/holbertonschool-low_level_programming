@@ -13,6 +13,7 @@ void print_all(const char * const format, ...)
 {
 	va_list valist;
 	int j = 0, i = 0;
+	char *sep = "";
 	my_form forms[] = {
 		{"c", print_achar},
 		{"i", print_anint},
@@ -29,9 +30,9 @@ void print_all(const char * const format, ...)
 		{
 			if (format[i] == *forms[j].c)
 			{
+				printf("%s",sep);
 				forms[j].f(&valist);
-				if (format[i + 1] != '\0')
-					printf(", ");
+				sep = ", ";
 				break;
 			}
 			j++;
