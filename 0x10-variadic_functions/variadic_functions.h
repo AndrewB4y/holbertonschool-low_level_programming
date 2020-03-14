@@ -11,10 +11,11 @@
 
 typedef struct form_t
 {
-        char *c;
-        void (*f)(va_list *);
-}my_form;
+	char *c;
+	void (*f)(va_list *);
+} my_form;
 
+int _putchar(char);
 int sum_them_all(const unsigned int, ...);
 void print_numbers(const char *, const unsigned int, ...);
 void print_strings(const char *, const unsigned int, ...);
