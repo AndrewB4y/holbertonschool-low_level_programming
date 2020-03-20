@@ -17,34 +17,33 @@ list_t *add_node_end(list_t **head, const char *str)
 	new = malloc(sizeof(list_t));
 	if (new == NULL)
 		return (NULL);
-
 	node = *head;
-
-	/*getting the len of str*/
-	while (str[len] != '\0')
-		len++;
-
-	len--;
-
+	if (str == NULL)
+	{
+		len = 0;
+		new->str = NULL;
+		new->len = len;
+	}
+	else
+	{
+		/*getting the len of str*/
+		while (str[len] != '\0')
+			len++;
+		new->len = len;
+		new->str = strdup(str);
+	}
 	/*if first element (head) is NULL*/
 	if (node == NULL)
 	{
 		*head = new;
-		new->str = strdup(str);
-		new->len = len;
 		new->next = NULL;
 
 		return (new);
 	}
-
 	/*finding last node element in list*/
 	while (node->next != NULL)
-	{
 		node = node->next;
-	}
 
-	new->str = strdup(str);
-	new->len = len;
 	new->next = NULL;
 	node->next = new;
 
