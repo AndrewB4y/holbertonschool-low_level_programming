@@ -28,10 +28,10 @@ size_t free_listint_safe(listint_t **h)
 		if (node > *h)
 		{
 			*h = NULL;
-			return (count * sizeof(listint_t));
+			return (count);
 		}
 		*h = node;
 	}
 
-	return (count * sizeof(listint_t));
+	return (count);
 }
