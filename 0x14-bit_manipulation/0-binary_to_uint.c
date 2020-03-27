@@ -22,7 +22,7 @@ unsigned int binary_to_uint(const char *b)
 	if (last_idx == -1)
 		return (0);
 
-	if ((last_idx - first_idx + 1) > (sizeof(unsigned int) * 8))
+	if ((last_idx - first_idx + 1) > (int)(sizeof(unsigned int) * 8))
 		return (0);
 
 	i = last_idx;
