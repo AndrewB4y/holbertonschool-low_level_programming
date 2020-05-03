@@ -119,8 +119,8 @@ int main(int argc, char **argv)
 		exit(1);
 	}
 	str_1 = argv[1];
-	uVar2 = 6;
-	uVar3 = ((6 ^ 0x3b) & 0x3f);
+	uVar2 = strlen(str_1);
+	uVar3 = ((uVar2 ^ 0x3b) & 0x3f);
 	str_2[0] = local_58[uVar3];
 	/* f2 */
 	local_10 = 0;
