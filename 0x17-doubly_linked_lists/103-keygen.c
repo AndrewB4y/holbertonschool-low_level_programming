@@ -4,97 +4,97 @@
 
 /**
  * f3 - calculation of the 3rd character
- * @arg_1: pointer to first input argument.
- * @arg_2_len2: 6
+ * @my: pointer to first input argument.
+ * @tu: 6
  *
  * Return: result of the calculation.
  */
-unsigned long f3(char *arg_1, int arg_2_len2)
+unsigned long f3(char *my, int tu)
 {
-	unsigned int local_10;
-	int local_c;
+	unsigned int laQueHay;
+	int bro;
 
-	local_10 = 1;
-	local_c = 0;
-	while (local_c < arg_2_len2)
+	laQueHay = 1;
+	bro = 0;
+	while (bro < tu)
 	{
-		local_10 = arg_1[local_c] * local_10;
-		local_c = local_c + 1;
+		laQueHay = my[bro] * laQueHay;
+		bro = bro + 1;
 	}
-	return ((unsigned long)((local_10 ^ 0x55) & 0x3f));
+	return ((unsigned long)((laQueHay ^ 0x55) & 0x3f));
 }
 
 /**
  * f4 - calculation of the 3rd character
- * @arg_1: pointer to first input argument.
- * @arg_2_len2: 6
+ * @my: pointer to first input argument.
+ * @tu: 6
  *
  * Return: result of the calculation.
  */
-unsigned long f4(char *arg_1, int arg_2_len2)
+unsigned long f4(char *my, int tu)
 {
 	unsigned int uVar1;
-	unsigned int local_10;
-	int local_c;
+	unsigned int laQueHay;
+	int bro;
 
-	local_10 = arg_1[0];
-	local_c = 0;
+	laQueHay = my[0];
+	bro = 0;
 	/*Looking for the smallest character*/
-	while (local_c < arg_2_len2)
+	while (bro < tu)
 	{
-		if ((int)local_10 < (int)arg_1[local_c])
+		if ((int)laQueHay < (int)my[bro])
 		{
-			local_10 = arg_1[local_c];
+			laQueHay = my[bro];
 		}
-		local_c = local_c + 1;
+		bro = bro + 1;
 	}
-	srand(local_10 ^ 0xe);
+	srand(laQueHay ^ 0xe);
 	uVar1 = rand();
 	return ((unsigned long)(uVar1 & 0x3f));
 }
 /**
  * f5 - calculation of the 3rd character
- * @arg_1: pointer to first input argument.
- * @arg_2_len2: 6
+ * @my: pointer to first input argument.
+ * @tu: 6
  *
  * Return: result of the calculation.
  */
 
-unsigned long f5(char *arg_1, int arg_2_len2)
+unsigned long f5(char *my, int tu)
 {
-	int local_10;
-	int local_c;
+	int laQueHay;
+	int bro;
 
-	local_10 = 0;
-	local_c = 0;
-	while (local_c < arg_2_len2)
+	laQueHay = 0;
+	bro = 0;
+	while (bro < tu)
 	{
-		local_10 = local_10 + arg_1[local_c] * arg_1[local_c];
-		local_c = local_c + 1;
+		laQueHay = laQueHay + my[bro] * my[bro];
+		bro = bro + 1;
 	}
-	return ((unsigned long)((unsigned int)(char)((char)local_10 ^ 0xef) & 0x3f));
+	return ((unsigned long)((unsigned int)(char)((char)laQueHay ^ 0xef) & 0x3f));
 }
 
 /**
  * f6 - calculation of the 3rd character
- * @arg_1: pointer to first input argument.
+ * @my: pointer to first input argument.
  *
  * Return: result of the calculation.
  */
 
-unsigned long f6(char arg_1)
+unsigned long f6(char my)
 {
-	int local_10;
-	int local_c;
+	int laQueHay;
+	int bro;
 
-	local_10 = 0;
-	local_c = 0;
-	while (local_c < arg_1)
+	laQueHay = 0;
+	bro = 0;
+	while (bro < my)
 	{
-		local_10 = rand();
-		local_c = local_c + 1;
+		laQueHay = rand();
+		bro = bro + 1;
 	}
-	return ((unsigned long)((unsigned int)(char)((char)local_10 ^ 0xe5) & 0x3f));
+	return ((unsigned long)((unsigned int)(char)((char)laQueHay ^ 0xe5) & 0x3f));
 }
 
 /**
@@ -107,40 +107,41 @@ unsigned long f6(char arg_1)
 
 int main(int argc, char **argv)
 {
-	char *str_1, str_2[7], *local_58;
-	uint uVar2;
-	unsigned long uVar3;
-	unsigned int local_10;
-	int local_c;
+	char *esa_1, esa_2[7], *aja;
+	uint aver;
+	unsigned long saSalio;
+	unsigned int laQueHay;
+	int bro;
 
-	local_58 = "A-CHRDw87lNS0E9B2TibgpnMVys5XzvtOGJcYLU+4mjW6fxqZeF3Qa1rPhdKIouk";
+	aja = "A-CHRDw87lNS0E9B2TibgpnMVys5XzvtOGJcYLU+4mjW6fxqZeF3Qa1rPhdKIouk";
 	if (argc != 2)
 	{
 		exit(1);
 	}
-	str_1 = argv[1];
-	uVar2 = strlen(str_1);
-	uVar3 = ((uVar2 ^ 0x3b) & 0x3f);
-	str_2[0] = local_58[uVar3];
+	esa_1 = argv[1];
+	aver = strlen(esa_1);
+	saSalio = ((aver ^ 0x3b) & 0x3f);
+	esa_2[0] = aja[saSalio];
 	/* f2 */
-	local_10 = 0;
-	local_c = 0;
-	while (local_c < (int)uVar2)
+	laQueHay = 0;
+	bro = 0;
+	while (bro < (int)aver)
 	{
-		local_10 = local_10 + str_1[local_c];
-		local_c = local_c + 1;
+		laQueHay = laQueHay + esa_1[bro];
+		bro = bro + 1;
 	}
-	uVar3 = ((local_10 ^ 0x4f) & 0x3f);
-	str_2[1] = local_58[uVar3];
-	uVar3 = f3(str_1, uVar2);
-	str_2[2] = local_58[uVar3];
-	uVar3 = f4(str_1, uVar2);
-	str_2[3] = local_58[uVar3];
-	uVar3 = f5(str_1, uVar2);
-	str_2[4] = local_58[uVar3];
-	uVar3 = f6(*str_1);
-	str_2[5] = local_58[uVar3];
-	str_2[6] = '\0';
-	printf("%s", str_2);
+	saSalio = ((laQueHay ^ 0x4f) & 0x3f);
+	/* /f2 */
+	esa_2[1] = aja[saSalio];
+	saSalio = f3(esa_1, aver);
+	esa_2[2] = aja[saSalio];
+	saSalio = f4(esa_1, aver);
+	esa_2[3] = aja[saSalio];
+	saSalio = f5(esa_1, aver);
+	esa_2[4] = aja[saSalio];
+	saSalio = f6(*esa_1);
+	esa_2[5] = aja[saSalio];
+	esa_2[6] = '\0';
+	printf("%s", esa_2);
 	return (0);
 }
