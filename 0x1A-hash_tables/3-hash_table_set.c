@@ -27,22 +27,23 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		{
 			if (strcmp(list_n->key, key) == 0)
 			{
-				list_n->value = (char *)value;
+				list_n->value = realloc(list_n->value, strlen(value) + 1);
+				list_n->value = memcpy(list_n->value, value, strlen(value) + 1);
 				return (1);
 			}
 			list_n = list_n->next;
 		}
 	}
 	new = malloc(sizeof(hash_node_t));
-	n_value = malloc(strlen(value));
-	n_key = malloc(strlen(key));
+	n_value = strdup(value);
+	n_key = strdup(key);
 	if (new == NULL || n_value == NULL || n_key == NULL)
 	{
 		free_new(new, n_value, n_key);
 		return (0);
 	}
-	new->value = (char *)value;
-	new->key = (char *)key;
+	new->value = n_value;
+	new->key = n_key;
 	new->next = (ht->array)[idx];
 	(ht->array)[idx] = new;
 	return (1);
