@@ -1,9 +1,9 @@
-CC	:= gcc
-SRC	:= main.c holberton.c
-OBJ	:= main.o holberton.o
-NAME	:= holberton
-RM	:= rm
-CFLAGS	:= -Wall -Werror -Wextra -pedantic
+CC	= gcc
+SRC	= main.c holberton.c
+OBJ	= main.o holberton.o
+NAME	= holberton
+RM	= rm
+CFLAGS	= -Wall -Werror -Wextra -pedantic
 
 .PHONY : all clean oclean fclean re
 

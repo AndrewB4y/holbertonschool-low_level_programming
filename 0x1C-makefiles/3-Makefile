@@ -1,8 +1,8 @@
-CC	:= gcc
-SRC	:= main.c holberton.c
-OBJ	:= main.o holberton.o
-NAME	:= holberton
-RM	:= rm
+CC	= gcc
+SRC	= main.c holberton.c
+OBJ	= main.o holberton.o
+NAME	= holberton
+RM	= rm
 
 .PHONY : all clean oclean fclean re
 
