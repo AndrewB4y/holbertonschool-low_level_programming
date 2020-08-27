@@ -18,15 +18,6 @@ int interpolation_search(int *array, size_t size, int value)
 	if (array == NULL || size == 0)
 		return (-1);
 
-	if (size == 1)
-	{
-		printf("Value checked array[0] = [%d]\n", array[0]);
-		if (array[0] == value)
-			return (0);
-		else
-			return (-1);
-	}
-
 	while ((array[h] != array[l])
 	       && (value >= array[l])
 	       && (value <= array[h]))
