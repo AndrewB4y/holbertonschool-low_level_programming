@@ -3,6 +3,7 @@
 
 /* Libraries */
 #include <stdio.h>
+#include <math.h>
 
 /* Globals and Structures*/
 
