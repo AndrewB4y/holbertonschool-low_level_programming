@@ -14,11 +14,12 @@
 
 listint_t *jump_list(listint_t *list, size_t size, int value)
 {
-	int b = sqrt(size), prev = 0;
+	int b = 0, prev = 0;
 	listint_t *b_ptr = list, *prev_ptr = list;
 
-	if (list == NULL)
+	if (list == NULL || size == 0)
 		return (NULL);
+	b = sqrt(size);
 	while (b_ptr->index != (size_t)b)
 		b_ptr = b_ptr->next;
 	/* finding interval in which @value is*/
